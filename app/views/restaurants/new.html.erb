@@ -1,0 +1,10 @@
+<h1 class="mb-5">Add a Restaurant</h1>
+
+<% cat = ["chinese", "italian", "japanese", "french", "belgian"] %>
+<%= simple_form_for(@restaurant) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :category, collection: cat %>
+  <%= f.input :phone_number %>
+  <%= f.submit %>
+<% end %>

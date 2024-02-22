@@ -1,0 +1,18 @@
+<h1 class="mb-5">List of Restaurants</h1>
+
+<%= link_to "Add a Restaurant", new_restaurant_path, class:"btn btn-primary" %>
+
+<% @restaurants.each do |res|%>
+  <div class= "card">
+    <p><span>Restaurant:</span><%= link_to res.name, restaurant_path(res.id)%></p>
+    <p><span>Address:</span> <%=res.address %></p>
+    <p><span>Category:</span> <%=res.category %></p>
+    <p><span>Phone Number:</span> <%=res.phone_number %></p>
+    <p><span>Reviews</span></p>
+    <ul>
+      <% res.reviews.each do |review|%>
+        <li><%= review.rating%>-<%= review.content%></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
